@@ -88,5 +88,29 @@ namespace AspNetCoreMvc2.Introduction.Controllers
             };
             return View(model);
         }
+        public JsonResult Index10(string key)
+        {
+            List<Employee> employees = new List<Employee>
+            {
+                new Employee{Id=1,FirstName="Fatih",LastName="Tarım",CityId=1},
+                new Employee{Id=2,FirstName="Burak",LastName="Tarım",CityId=2},
+                new Employee{Id=3,FirstName="Çağatay",LastName="Çınar",CityId=3}
+            };
+            if (string.IsNullOrEmpty(key))
+            {
+                return Json(employees);
+            }
+
+            var result = employees.Where(p=>p.FirstName.ToLower().Contains(key));
+            return Json(result);
+        }
+        public ViewResult EmployeeForm()
+        {
+            return View();
+        }
+        public string RouteData(int id)
+        {
+            return id.ToString();
+        }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model AspNetCoreMvc2.Introduction.EmployeeAddViewModel;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <form asp-controller="Employee" asp-action="Add">
+        Id: <input asp-for="Employee.Id" /><br />
+        FirstName: <input asp-for="Employee.FirstName" /><br />
+        LastName: <input asp-for="Employee.LastName" /><br />
+        City: <select asp-for="Employee.CityId" asp-items="Model.Cities"></select> <br />
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

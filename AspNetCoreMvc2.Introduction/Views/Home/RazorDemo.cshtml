@@ -47,5 +47,44 @@
 
     }
     <p>@number</p>
+
+    @if (number < 10)
+    {
+        <p>Number is less than 10</p>
+    }
+    else if (number == 10)
+    {
+        <p>Your Number is 10</p>
+    }
+    else
+    {
+        <p>Your nnumber greater than 10</p>
+    }
+
+    @try
+    {
+
+    }
+    catch (ArgumentNullException argumentNullException)
+    {
+
+        throw;
+    }
+    catch (Exception exception)
+    {
+
+        throw;
+    }
+    finally
+    {
+        
+    }
+
+    @using (Html.BeginForm())
+    {
+       <input type="text" name="" value="" />
+       <button type="submit" >Gönder</button>
+    }
+
 </body>
 </html>
